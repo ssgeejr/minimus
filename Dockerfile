@@ -14,14 +14,17 @@ RUN apt-get update && \
 # Set working directory
 WORKDIR /var/www/html
 
-# Copy CGI scripts to the web root
+# Copy your CGI scripts into the web root
 COPY ./src /var/www/html
 
 # Copy Apache config to enable CGI
 COPY apache2/apache-cgi.conf /etc/apache2/sites-available/000-default.conf
 
-# Ensure scripts are executable and owned properly
-RUN chmod -R 755 /var/www/html && \
+# Copy CSS (if not already done by previous COPY)
+#COPY ./src/style.css /var/www/html/style.css
+
+# Ensure scripts are executable and readable
+RUN find /var/www/html -name "*.cgi" -exec chmod 755 {} \; && \
     chown -R www-data:www-data /var/www/html
 
 # Suppress Apache FQDN warning
@@ -30,5 +33,5 @@ RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
 # Expose HTTP port
 EXPOSE 80
 
-# Run Apache in foreground
+# Run Apache in the foreground
 CMD ["apachectl", "-D", "FOREGROUND"]
