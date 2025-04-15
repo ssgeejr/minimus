@@ -1,4 +1,4 @@
-# Use official Perl image as base
+# Use official Perl image with Debian base
 FROM perl:5.34
 
 # Install Apache and necessary Perl modules
@@ -9,15 +9,18 @@ RUN apt-get update && \
 # Set working directory
 WORKDIR /var/www/html
 
-# Copy your Perl CGI scripts into the web root
+# Copy your CGI scripts into the web root
 COPY ./src /var/www/html
+
+# Copy in custom Apache config to enable CGI
+COPY apache-cgi.conf /etc/apache2/sites-available/000-default.conf
 
 # Ensure scripts are executable
 RUN chown -R www-data:www-data /var/www/html && \
     chmod +x /var/www/html/*.cgi
 
-# Expose port 80
+# Expose port 80 for web traffic
 EXPOSE 80
 
-# Run Apache in the foreground
+# Run Apache in foreground
 CMD ["apachectl", "-D", "FOREGROUND"]
