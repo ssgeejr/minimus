@@ -9,9 +9,9 @@ my $q = CGI->new;
 print $q->header('text/html');
 
 # DB connection
-my $dsn = "DBI:mysql:database=minimus;host=localhost";
-my $db_user = "root";
-my $db_pass = "your_password";  # Replace with your actual password
+my $dsn = "DBI:mysql:database=minimus;host=minimusdb";
+my $db_user = "liono";
+my $db_pass = "thundercats";  # Replace with your actual password
 my $dbh = DBI->connect($dsn, $db_user, $db_pass, { RaiseError => 1, AutoCommit => 1 });
 
 # Handle insert
