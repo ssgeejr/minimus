@@ -1,7 +1,7 @@
 version: '3.8'
 
 services:
-    tethysdb:
+    minimusdb:
         image: mysql:8.0.25
         container_name: minimusdb
 #        tty: true
