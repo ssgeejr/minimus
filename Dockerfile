@@ -13,7 +13,7 @@ WORKDIR /var/www/html
 COPY ./src /var/www/html
 
 # Copy in custom Apache config to enable CGI
-COPY apache-cgi.conf /etc/apache2/sites-available/000-default.conf
+COPY ./apache2/apache-cgi.conf /etc/apache2/sites-available/000-default.conf
 
 # Ensure scripts are executable
 RUN chown -R www-data:www-data /var/www/html && \
