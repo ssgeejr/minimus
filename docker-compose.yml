@@ -1,10 +1,9 @@
-version: '3.8'
+#version: '3.3'
 
 services:
     minimusdb:
         image: mysql:8.0.25
         container_name: minimusdb
-#        tty: true
         restart: always
         environment:
             MYSQL_DATABASE: 'minimus'
@@ -24,12 +23,10 @@ services:
             context: .
             dockerfile: Dockerfile
         ports:
-            - "80:80"
+            - "8080:80"
         volumes:
             - ./src:/var/www/html
         environment:
             - APACHE_LOG_DIR=/var/log/apache2
-#        extra_hosts:
-#            - "tethys:${PUBLIC_IP}"
         depends_on:
             - minimusdb

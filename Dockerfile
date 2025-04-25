@@ -27,6 +27,9 @@ COPY apache2/apache-cgi.conf /etc/apache2/sites-available/000-default.conf
 RUN find /var/www/html -name "*.cgi" -exec chmod 755 {} \; && \
     chown -R www-data:www-data /var/www/html
 
+RUN chmod /var/www/html/index.cgi
+RUN chown www-data:www-data /var/www/html/*
+
 # Suppress Apache FQDN warning
 RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
 
