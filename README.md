@@ -1,6 +1,6 @@
 # minimus
-Simple Front end for tracking users using evilginx3
 
+Presentation tools for Cybersecurity Awareness
 
 How to startup 
 
