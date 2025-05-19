@@ -19,6 +19,7 @@ services:
             - 3306:3306
     web:
         container_name: minimus
+        image: minimus-bundle:latest
         build:
             context: .
             dockerfile: Dockerfile
@@ -26,6 +27,7 @@ services:
             - "8080:80"
         volumes:
             - ./src:/var/www/html
+            - ./adobe:/var/www/html/adobe
         environment:
             - APACHE_LOG_DIR=/var/log/apache2
         depends_on:
