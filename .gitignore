@@ -1,5 +1,6 @@
 
 *.exe
+.idea
 
 !Build/
 .last_cover_stats

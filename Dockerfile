@@ -15,11 +15,11 @@ RUN apt-get update && \
 WORKDIR /var/www/html
 
 # Copy your CGI scripts into the web root
-COPY ./src /var/www/html
-RUN mkdir /var/www/html/adobe
-COPY ./adobe /var/www/html/adobe/
-RUN mkdir /var/www/html/centralbank
-COPY ./banking /var/www/html/centralbank/
+#COPY ./src /var/www/html
+RUN mkdir -p /var/www/html/adobe
+#COPY ./adobe /var/www/html/adobe/
+RUN mkdir -p /var/www/html/centralbank
+#COPY ./banking /var/www/html/centralbank/
 
 # Copy Apache config to enable CGI
 COPY apache2/apache-cgi.conf /etc/apache2/sites-available/000-default.conf
