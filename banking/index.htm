@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Central Bank - Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f1f3f6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .login-container {
+      background-color: white;
+      border: 3px solid #002e6d; /* dark blue */
+      border-radius: 10px;
+      padding: 30px 20px;
+      width: 90%;
+      max-width: 400px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      text-align: center;
+    }
+
+    .bank-name {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      margin: 10px 0 20px;
+      font-size: 18px;
+      color: #333;
+    }
+
+	input[type="text"],
+	input[type="password"] {
+	  width: calc(100% - 30px);
+	  padding: 12px;
+	  margin: 10px 0;
+	  border: 1px solid #ccc;
+	  border-radius: 5px;
+	  font-size: 16px;
+	}
+
+    .button-group {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    .button-group button {
+      width: 48%;
+      padding: 12px;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .login-btn {
+      background-color: #002e6d;
+      color: white;
+    }
+
+    .cancel-btn {
+      background-color: #ccc;
+      color: #002e6d;
+    }
+
+    @media (max-width: 500px) {
+      .login-container {
+        padding: 20px 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <div class="bank-name">Central Bank</div>
+    <!-- Add logo image here if needed -->
+    <h2>Login to Account</h2>
+    <form onsubmit="event.preventDefault(); window.location.href='bankaccount.htm';">
+      <input type="text" placeholder="Username" required>
+      <input type="password" placeholder="Password" required>
+      <div class="button-group">
+        <button type="submit" class="login-btn">Login</button>
+        <button type="button" class="cancel-btn" onclick="window.location.reload();">Cancel</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
