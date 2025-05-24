@@ -15,7 +15,7 @@ RUN apt-get update && \
 WORKDIR /var/www/html
 
 # Copy your CGI scripts into the web root
-#COPY ./src /var/www/html
+COPY ./src /var/www/html
 RUN mkdir -p /var/www/html/adobe
 #COPY ./adobe /var/www/html/adobe/
 RUN mkdir -p /var/www/html/centralbank
