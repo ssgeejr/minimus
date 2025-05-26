@@ -29,6 +29,7 @@ services:
             - ./src:/var/www/html
             - ./adobe:/var/www/html/adobe
             - ./banking:/var/www/html/centralbank
+            - ./phishing:/var/www/html/phishing
         environment:
             - APACHE_LOG_DIR=/var/log/apache2
         depends_on:

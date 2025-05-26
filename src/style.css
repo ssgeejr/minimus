@@ -1,38 +1,56 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 40px;
+
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
-.form-section, .display-section {
-    border: 1px solid red;
-    padding: 20px;
-    margin-bottom: 30px;
+.container {
+  width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
-.form-section input[type="text"] {
-    width: 300px;
-    margin-bottom: 10px;
+.full-wrapper {
+  width: 100%;
+  border: 2px solid #800020;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #fff;
 }
 
-.form-section input[type="submit"],
-.display-section input[type="submit"] {
-    padding: 5px 15px;
-    margin: 2px;
+.bottom-row {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
+.phase-box {
+  width: 100%;
+  border: 2px solid #800020;
+  padding: 20px 10px;
+  box-sizing: border-box;
+  background-color: #fff;
+  text-align: center;
 }
 
-th {
-    background-color: #003366;
-    color: white;
-    text-align: left;
-    padding: 8px;
+.phase-box img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
 }
 
-td {
-    padding: 8px;
-    border: 1px solid red;
+.phase-inner-text {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #800020;
+  margin-top: 10px;
+}
+
+.phase-inner-spacer {
+  height: 10px;
 }

@@ -19,7 +19,8 @@ COPY ./src /var/www/html
 RUN mkdir -p /var/www/html/adobe
 #COPY ./adobe /var/www/html/adobe/
 RUN mkdir -p /var/www/html/centralbank
-#COPY ./banking /var/www/html/centralbank/
+RUN mkdir -p /var/www/html/phishing
+COPY ./phishing /var/www/html/phishing
 
 # Copy Apache config to enable CGI
 COPY apache2/apache-cgi.conf /etc/apache2/sites-available/000-default.conf
@@ -28,10 +29,10 @@ COPY apache2/apache-cgi.conf /etc/apache2/sites-available/000-default.conf
 #COPY ./src/style.css /var/www/html/style.css
 
 # Ensure scripts are executable and readable
-RUN find /var/www/html -name "*.cgi" -exec chmod 755 {} \; && \
+RUN find /var/www/html/phishing -name "*.cgi" -exec chmod 755 {} \; && \
     chown -R www-data:www-data /var/www/html
 
-RUN chmod -R g+w /var/www/html/index.cgi
+RUN chmod -R g+w /var/www/html/phishing/index.cgi
 RUN chown www-data:www-data /var/www/html/*
 
 # Suppress Apache FQDN warning
