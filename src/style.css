@@ -1,8 +1,13 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
 body, html {
   height: 100%;
   margin: 0;
   padding: 0;
+  background: linear-gradient(to bottom right, #000000, #1a001a);
+  color: #33ffcc;
+  font-family: 'Share Tech Mono', monospace;
 }
 
 .container {
@@ -12,19 +17,32 @@ body, html {
   box-sizing: border-box;
 }
 
+a {
+  color: #00ffff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #ff3333;
+  text-shadow: 0 0 10px #ff3333;
+}
+
 .nav-row-wrapper {
-  border: 2px solid #800020;
+  border: 2px solid #ff0066;
   padding: 10px;
   margin-bottom: 20px;
-  background-color: #fff;
+  background-color: rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 15px #ff0066;
 }
 
 .full-wrapper {
   width: 100%;
-  border: 2px solid #800020;
+  border: 2px solid #33ffcc;
   padding: 20px;
   box-sizing: border-box;
-  background-color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 20px #33ffcc;
 }
 
 .bottom-row {
@@ -37,11 +55,18 @@ body, html {
 
 .phase-box {
   width: 100%;
-  border: 2px solid #800020;
+  border: 2px solid #33ffcc;  /* Match full-wrapper border */
   padding: 20px 10px;
   box-sizing: border-box;
-  background-color: #fff;
+  background-color: transparent;
   text-align: center;
+  box-shadow: 0 0 15px #00ffff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.phase-box:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 25px #00ffff;
 }
 
 .phase-box img {
@@ -49,15 +74,29 @@ body, html {
   height: auto;
   display: block;
   margin: 0 auto;
+  border: 1px solid #33ffcc;
+  box-shadow: 0 0 10px #33ffcc;
 }
 
 .phase-inner-text {
-  font-size: 1.2em;
+  font-size: 1.4em;
   font-weight: bold;
-  color: #800020;
+  color: #ff3333;
   margin-top: 10px;
+  text-shadow: 0 0 8px #ff0000;
 }
 
 .phase-inner-spacer {
   height: 10px;
+}
+
+h1 {
+  color: #00ffff;
+  text-shadow: 0 0 10px #00ffff;
+}
+
+p {
+  color: #ccffcc;
+  line-height: 1.6;
+  text-shadow: 0 0 5px #006666;
 }
