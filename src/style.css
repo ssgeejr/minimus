@@ -29,11 +29,11 @@ a:hover {
 }
 
 .nav-row-wrapper {
-  border: 2px solid #ff0066;
+  border: 2px solid #33ffcc;
   padding: 10px;
   margin-bottom: 20px;
   background-color: rgba(0, 0, 0, 0.6);
-  box-shadow: 0 0 15px #ff0066;
+  box-shadow: 0 0 15px #33ffcc;
 }
 
 .full-wrapper {
