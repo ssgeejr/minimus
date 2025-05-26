@@ -12,6 +12,13 @@ body, html {
   box-sizing: border-box;
 }
 
+.nav-row-wrapper {
+  border: 2px solid #800020;
+  padding: 10px;
+  margin-bottom: 20px;
+  background-color: #fff;
+}
+
 .full-wrapper {
   width: 100%;
   border: 2px solid #800020;
